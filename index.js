@@ -25,6 +25,10 @@ app.use(fileUpload({
  useTempFiles:true
 }));
 
+app.get('/',(req,res)=>{
+ res.send('feft')
+})
+
 app.use('/api/auth',authRoute);
 app.use('/api/item',proRoute);
 app.use('/api/order',orderRoute)
