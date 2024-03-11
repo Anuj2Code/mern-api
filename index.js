@@ -17,7 +17,11 @@ const base = process.env.base || 8800;
 
 connectToMongo()
 const port = base;
-app.use(cors());
+app.use(cors({
+    origin:["https://mern-api-sand.vercel.app/"],
+    methods:["POST","GET","DELETE","PUT"],
+    credentials:true
+}));
 app.use(cookieParser());  
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.json({limit: '50mb'}));
